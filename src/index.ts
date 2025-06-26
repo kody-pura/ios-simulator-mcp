@@ -221,7 +221,7 @@ if (!isToolFiltered("ui_type")) {
       try {
         const actualUdid = await getBootedDeviceId(udid);
         const { stderr } = await execAsync(
-          `idb ui text ${text} --udid ${actualUdid}`
+          `idb ui text '${text}' --udid ${actualUdid}`
         );
 
         if (stderr) throw new Error(stderr);
